@@ -27,12 +27,17 @@
 
   <script src='./pages/components/home.vue.js'></script>
   <script src='pages/components/servicelist.vue.js'></script>
+  <script src='pages/components/servicedetails.vue.js'></script>
   <script>
     Vue.use(VueRouter);
 
     const routes = [{
             path: '/',
             component: home
+        },
+        {
+          path: '/getDetails/:id',
+          component: ServiceDetails
         }
         ]
         let router = new VueRouter({

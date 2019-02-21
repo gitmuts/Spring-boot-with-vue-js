@@ -23,6 +23,7 @@ Vue.component("service-list",{
                     <td>{{ props.item.name }}</td>
                     <td>{{ props.item.createdBy }}</td>
                     <td>{{ props.item.createdAt }}</td>
+                    <td> <v-btn color="info" @click="getDetails(props.item.id)">VIEW</v-btn> </td>
                 </template>
                 <v-alert slot="no-results" :value="true" color="error" icon="warning">
                 Your search for "{{ search }}" found no results.
@@ -58,6 +59,10 @@ Vue.component("service-list",{
               }).catch(err => {
                 console.err('err', err)
               })
+        },
+        getDetails: function(id) {
+               console.log(id);
+               router.push({ path: `/getDetails/${id}` });
         }
     }
 });
